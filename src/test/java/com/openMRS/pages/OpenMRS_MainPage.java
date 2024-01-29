@@ -9,6 +9,8 @@ public class OpenMRS_MainPage {
         PageFactory.initElements(driver,this);
     }
 
+
+
     public void validationOfTitle(WebDriver driver){
         BrowserUtils.getTitle(driver);
     }
