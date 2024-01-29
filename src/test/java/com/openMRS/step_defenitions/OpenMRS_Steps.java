@@ -11,7 +11,7 @@ public class OpenMRS_Steps {
 
     @When("user provide {string} and {string}")
     public void user_provide_and(String userName, String password, io.cucumber.datatable.DataTable dataTable) {
-      
+
     }
     @Then("user choose the location and click on login button")
     public void user_choose_the_location_and_click_on_login_button() {
@@ -21,6 +21,16 @@ public class OpenMRS_Steps {
     public void validate_title_of_main_page() {
 
     }
+
+    @When("user provide wrong {string} and {string}")
+    public void user_provide_wrong_and(String WrongUserName, String WrongPassword, io.cucumber.datatable.DataTable dataTable) {
+
+    }
+    @Then("validate text of error message")
+    public void validate_text_of_error_message() {
+
+    }
+
 
 
 
