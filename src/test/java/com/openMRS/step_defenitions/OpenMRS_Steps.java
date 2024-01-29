@@ -26,10 +26,11 @@ public class OpenMRS_Steps {
     public void user_provide_wrong_and(String WrongUserName, String WrongPassword, io.cucumber.datatable.DataTable dataTable) {
 
     }
-    @Then("validate text of error message")
-    public void validate_text_of_error_message() {
+    @Then("user click in login btn validate text of error message")
+    public void user_click_in_login_btn_validate_text_of_error_message() {
 
     }
+
 
 
 

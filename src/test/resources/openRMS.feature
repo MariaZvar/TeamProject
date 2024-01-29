@@ -8,8 +8,9 @@ Feature:WebPages Functionality
     And validate title of main page
   @LoginPageNegativeTest
   Scenario: Handling Incorrect Login Credentials
-    When user provide wrong 'WrongUserName' and 'WrongPassword'
-    |WrongUserName|ADMIN|
-    |WrongPassword|Admin123|
-    Then validate text of error message
+    When user provide wrong 'wrongUserName' and 'wrongPassword'
+    |wrongUserName|ADMIN|
+    |wrongPassword|Admin123|
+    Then user click in login btn validate text of error message
+
 
