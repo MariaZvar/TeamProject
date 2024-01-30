@@ -12,7 +12,7 @@ public class OpenMRS_Hook {
     WebDriver driver= DriverHelper.getDriver();
     @Before
     public void setUp(){
-        driver.get(ConfigReader.readProperty("http://codefish.ninja/openmrs/login.htm"));
+        BrowserUtils.getURL(driver,"projectURL");
     }
     @After
     public void teamDown(Scenario scenario){

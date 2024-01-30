@@ -11,9 +11,9 @@ public class LoginPage {
     public LoginPage(WebDriver driver){
         PageFactory.initElements(driver,this);}
     @FindBy(css = "input[id='username']")
-    WebElement userName;
+    WebElement userNameBtn;
     @FindBy(css = "input[id='password']")
-    WebElement password;
+    WebElement passwordBtn;
 
     @FindBy(css = "li[id='Pharmacy']")
     WebElement location;
@@ -23,8 +23,8 @@ public class LoginPage {
     WebElement errorMsg;
 
     public void PositiveUserNameAndPassword(String userName, String password){
-        this.userName.sendKeys(userName);
-        this.password.sendKeys(password);
+        this.userNameBtn.sendKeys(userName);
+        this.passwordBtn.sendKeys(password);
     }
     public void PositiveLocation(){
         location.click();
@@ -32,11 +32,12 @@ public class LoginPage {
     }
 
     public void NegativeUserNameAndPassword(String wrongUserName, String wrongPassword){
-        this.userName.sendKeys(wrongUserName);
-        this.password.sendKeys(wrongPassword);
+        this.userNameBtn.sendKeys(wrongUserName);
+        this.passwordBtn.sendKeys(wrongPassword);
     }
     public void negativeValidateErrorMsg(String errorMessage){
-        this.errorMsg.getText();
+        String actualText=this.errorMsg.getText();
+        Assert.assertEquals(actualText,errorMessage);
 
 
     }
