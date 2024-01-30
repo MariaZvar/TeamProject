@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources",
         glue = "com/openMRS/step_defenitions",
-        dryRun =true,
-        tags ="@Task3",
+        dryRun =false,
+      //  tags ="@Task3",
         plugin = {"pretty", "html:target/uiReport.html", "rerun:target/uiFailedTests.txt"}
 )
 public class OpenMRS_Runner {
