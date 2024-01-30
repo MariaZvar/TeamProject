@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-public class OpenMRS_DataManagementPage {
+public class DataManagementPage {
 
-    public OpenMRS_DataManagementPage(WebDriver driver){
+    public DataManagementPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
 
