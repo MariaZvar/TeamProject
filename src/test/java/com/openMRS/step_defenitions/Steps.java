@@ -5,7 +5,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import utils.DriverHelper;
 
-public class OpenMRS_Steps {
+public class Steps {
     WebDriver driver= DriverHelper.getDriver();
 
 

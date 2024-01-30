@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-public class OpenMRS_ActiveVisitsPage {
+public class ActiveVisitsPage {
 
-    public OpenMRS_ActiveVisitsPage(WebDriver driver){
+    public ActiveVisitsPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
 

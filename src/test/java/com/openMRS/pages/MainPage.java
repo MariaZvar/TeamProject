@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-public class OpenMRS_MainPage {
-    public OpenMRS_MainPage(WebDriver driver){
+public class MainPage {
+    public MainPage(WebDriver driver){
         PageFactory.initElements(driver,this);
     }
 

@@ -5,17 +5,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-public class OpenMRS_RegisterPatientPage {
-
-    public OpenMRS_RegisterPatientPage(WebDriver driver){
+public class ReportsPage {
+    public ReportsPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
 
 
-    public void validationOfFindPatientRecordPage(WebDriver driver, String OpenMRS_RegisterPatient){
+    public void validationOfFindPatientRecordPage(WebDriver driver, String expectedTitleOfReports){
 
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, OpenMRS_RegisterPatient, "Failed validation");
+        Assert.assertEquals(actualTitle, expectedTitleOfReports, "Failed validation");
 
     }
 }

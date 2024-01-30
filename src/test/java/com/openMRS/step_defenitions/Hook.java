@@ -8,7 +8,7 @@ import utils.BrowserUtils;
 import utils.ConfigReader;
 import utils.DriverHelper;
 
-public class OpenMRS_Hook {
+public class Hook {
     WebDriver driver= DriverHelper.getDriver();
     @Before
     public void setUp(){
