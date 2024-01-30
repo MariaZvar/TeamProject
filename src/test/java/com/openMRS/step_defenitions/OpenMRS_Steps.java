@@ -1,6 +1,7 @@
 package com.openMRS.step_defenitions;
 
 import com.openMRS.pages.*;
+import com.openMRS.pages.*;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -20,7 +21,6 @@ public class OpenMRS_Steps {
     FindPatientRecordPage findPatientRecordPage=new FindPatientRecordPage(driver);
     RegisterPatientPage registerPatientPage=new RegisterPatientPage(driver);
     ReportsPage reportsPage=new ReportsPage(driver);
-
 
     @When("user provide {string} and {string}")
     public void user_provide_and(String userName, String password, io.cucumber.datatable.DataTable dataTable) {

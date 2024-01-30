@@ -77,3 +77,31 @@ Feature:WebPages Functionality
     Then user validate again home page
       | expectedTitleOfSystemAdministration | title |
 
+
+
+
+  Scenario: advanced Management
+
+    When user provide 'userName' and 'password'
+      |userName|admin|
+      |password|Admin123|
+    Then user choose the location and click on login button
+
+    And validate title of main page
+
+    Then user goes to the System Administrations and clicks Advanced Administrations
+
+    And user clicks manage-person and finds the deleted person by 'name'
+      | name | baaber |
+
+    Then user changes the 'address' and saves person
+      | address | 1712 Mailuusuu |
+
+    And user comes back and clicks Find Person Record
+
+    Then user finds updated person by 'nameWithUpdated'
+      | nameWithUpdated | baaber |
+
+    And user checks the 'updatedInfo'
+      | updatedInfo | 1712 Mailuusuu, Des Plaines |
+
