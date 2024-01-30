@@ -23,6 +23,7 @@ public class LoginPage {
     WebElement errorMsg;
 
     public void PositiveUserNameAndPassword(String userName, String password){
+
         this.userNameBtn.sendKeys(userName);
         this.passwordBtn.sendKeys(password);
     }
@@ -36,6 +37,7 @@ public class LoginPage {
         this.passwordBtn.sendKeys(wrongPassword);
     }
     public void negativeValidateErrorMsg(String errorMessage){
+        loginBtn.click();
         String actualText=this.errorMsg.getText();
         Assert.assertEquals(actualText,errorMessage);
 
