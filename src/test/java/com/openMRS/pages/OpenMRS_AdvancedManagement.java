@@ -15,7 +15,7 @@ public class OpenMRS_AdvancedManagement {
     }
 
 
-    @FindBy(xpath = "//a[@id='coreapps-systemadministration-homepageLink-coreapps-systemadministration-homepageLink-extension']")
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/systemadministration/systemAdministration.page']")
     WebElement systemAdministrations;
 
     @FindBy(xpath = "//a[@href='/openmrs/admin/index.htm']")
@@ -60,6 +60,7 @@ public class OpenMRS_AdvancedManagement {
     public void findDeletedPerson(String name){
 
         this.managePerson.click();
+        this.searchBarManage.click();
         this.searchBarManage.sendKeys(name);
 
     }
@@ -67,6 +68,7 @@ public class OpenMRS_AdvancedManagement {
 
     public void changeAndSave(String address){
         this.person.click();
+        this.addressField.click();
         this.addressField.clear();
         this.addressField.sendKeys(address);
 
@@ -87,7 +89,7 @@ public class OpenMRS_AdvancedManagement {
 
     public void findUpdatedPerson(String nameWithUpdated){
 
-
+        this.searchBarRecord.click();
         this.searchBarRecord.sendKeys(nameWithUpdated);
 
     }
