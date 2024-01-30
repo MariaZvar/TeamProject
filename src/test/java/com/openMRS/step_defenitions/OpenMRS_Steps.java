@@ -1,38 +1,49 @@
 package com.openMRS.step_defenitions;
 
+import com.openMRS.pages.*;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import utils.BrowserUtils;
 import utils.DriverHelper;
 
 public class OpenMRS_Steps {
     WebDriver driver= DriverHelper.getDriver();
+    LoginPage loginPage=new LoginPage(driver);
+    MainPage mainPage=new MainPage(driver);
+    ActiveVisitsPage activeVisitsPage=new ActiveVisitsPage(driver);
+    AppointmentSchedulingPage appointmentSchedulingPage=new AppointmentSchedulingPage(driver);
+    CaptureVitalsPage captureVitalsPage=new CaptureVitalsPage(driver);
+    ConfigureMetadataPage configureMetadataPage=new ConfigureMetadataPage(driver);
+    DataManagementPage dataManagementPage=new DataManagementPage(driver);
+    FindPatientRecordPage findPatientRecordPage=new FindPatientRecordPage(driver);
+    RegisterPatientPage registerPatientPage=new RegisterPatientPage(driver);
+    ReportsPage reportsPage=new ReportsPage(driver);
 
 
     @When("user provide {string} and {string}")
     public void user_provide_and(String userName, String password, io.cucumber.datatable.DataTable dataTable) {
+        loginPage.PositiveUserNameAndPassword(userName, password);
 
     }
     @Then("user choose the location and click on login button")
     public void user_choose_the_location_and_click_on_login_button() {
-
+      loginPage.PositiveLocation();
     }
     @Then("validate title of main page")
     public void validate_title_of_main_page() {
-
+        Assert.assertEquals("Login", BrowserUtils.getTitle(driver));
     }
 
     @When("user provide wrong {string} and {string}")
     public void user_provide_wrong_and(String WrongUserName, String WrongPassword, io.cucumber.datatable.DataTable dataTable) {
+        loginPage.NegativeUserNameAndPassword(WrongUserName,WrongPassword);
+    }
+    @Then("user click in login btn validate text of {string}")
+    public void user_click_in_login_btn_validate_text_of(String errorMessage, io.cucumber.datatable.DataTable dataTable) {
 
     }
-    @Then("user click in login btn validate text of error message")
-    public void user_click_in_login_btn_validate_text_of_error_message() {
-
-    }
-
-
-
 
     @When("user clicks on the RegistrationDeskBtn")
     public void user_clicks_on_the_registration_desk_btn() {

@@ -13,7 +13,8 @@ Feature:WebPages Functionality
     When user provide wrong 'wrongUserName' and 'wrongPassword'
       | wrongUserName | ADMIN    |
       | wrongPassword | Admin123 |
-    Then user click in login btn validate text of error message
+    Then user click in login btn validate text of 'errorMessage'
+    |errorMessage|You must choose a location!|
 
 
   Scenario: Validation of all pages

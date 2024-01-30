@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-public class OpenMRS_ConfigureMetadataPage {
+public class ConfigureMetadataPage {
 
-    public OpenMRS_ConfigureMetadataPage(WebDriver driver){
+    public ConfigureMetadataPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
 

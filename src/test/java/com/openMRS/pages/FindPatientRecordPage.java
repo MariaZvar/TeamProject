@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-public class OpenMRS_FindPatientRecordPage {
+public class FindPatientRecordPage {
 
-    public OpenMRS_FindPatientRecordPage(WebDriver driver){
+    public FindPatientRecordPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
 

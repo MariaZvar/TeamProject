@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-public class OpenMRS_CaptureVitalsPage {
-    public OpenMRS_CaptureVitalsPage(WebDriver driver) {
+public class CaptureVitalsPage {
+    public CaptureVitalsPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 

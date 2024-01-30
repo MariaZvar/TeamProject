@@ -5,22 +5,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.BrowserUtils;
 
-public class OpenMRS_LoginPage {
+public class LoginPage {
 
-    public OpenMRS_LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver){
         PageFactory.initElements(driver,this);}
     @FindBy(css = "input[id='username']")
     WebElement userName;
     @FindBy(css = "input[id='password']")
     WebElement password;
 
-    @FindBy(xpath = "")
+    @FindBy(css = "li[id='Pharmacy']")
     WebElement location;
-    @FindBy(xpath = "")
+    @FindBy(css = "input[id='loginButton']")
     WebElement loginBtn;
-    @FindBy(xpath = "")
+    @FindBy(css = "span[id='sessionLocationError']")
     WebElement errorMsg;
 
     public void PositiveUserNameAndPassword(String userName, String password){
@@ -36,10 +35,10 @@ public class OpenMRS_LoginPage {
         this.userName.sendKeys(wrongUserName);
         this.password.sendKeys(wrongPassword);
     }
-    public void negativeValidateErrorMsg(){
-        String actualText=errorMsg.getText();
-        String expectedText="";
-        Assert.assertEquals(actualText,expectedText);
+    public void negativeValidateErrorMsg(String errorMessage){
+        this.errorMsg.getText();
+
+
     }
 
 

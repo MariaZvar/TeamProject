@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-public class OpenMRS_AppointmentSchedulingPage {
+public class AppointmentSchedulingPage {
 
-    public OpenMRS_AppointmentSchedulingPage(WebDriver driver){
+    public AppointmentSchedulingPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
 
