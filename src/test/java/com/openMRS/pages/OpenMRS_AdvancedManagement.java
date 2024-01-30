@@ -15,16 +15,16 @@ public class OpenMRS_AdvancedManagement {
     }
 
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@id='coreapps-systemadministration-homepageLink-coreapps-systemadministration-homepageLink-extension']")
     WebElement systemAdministrations;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/openmrs/admin/index.htm']")
     WebElement advancedAdministrations;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/openmrs/admin/patients/index.htm']")
     WebElement  managePerson;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@id='inputNode']")
     WebElement searchBarManage;
 
     @FindBy(xpath = "")

@@ -85,6 +85,7 @@ Feature:WebPages Functionality
       |userName|admin|
       |password|Admin123|
     Then user choose the location and click on login button
+
     And validate title of main page
 
     Then user goes to the System Administrations and clicks Advanced Administrations
