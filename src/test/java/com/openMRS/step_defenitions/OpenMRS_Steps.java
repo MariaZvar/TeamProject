@@ -16,14 +16,14 @@ public class OpenMRS_Steps {
     WebDriver driver= DriverHelper.getDriver();
     LoginPage loginPage=new LoginPage(driver);
     MainPage mainPage=new MainPage(driver);
-//    ActiveVisitsPage activeVisitsPage=new ActiveVisitsPage(driver);
-//    AppointmentSchedulingPage appointmentSchedulingPage=new AppointmentSchedulingPage(driver);
-//    CaptureVitalsPage captureVitalsPage=new CaptureVitalsPage(driver);
-//    ConfigureMetadataPage configureMetadataPage=new ConfigureMetadataPage(driver);
-//    DataManagementPage dataManagementPage=new DataManagementPage(driver);
-//    FindPatientRecordPage findPatientRecordPage=new FindPatientRecordPage(driver);
-//    RegisterPatientPage registerPatientPage=new RegisterPatientPage(driver);
-//    ReportsPage reportsPage=new ReportsPage(driver);
+    ActiveVisitsPage activeVisitsPage=new ActiveVisitsPage(driver);
+    AppointmentSchedulingPage appointmentSchedulingPage=new AppointmentSchedulingPage(driver);
+    CaptureVitalsPage captureVitalsPage=new CaptureVitalsPage(driver);
+    ConfigureMetadataPage configureMetadataPage=new ConfigureMetadataPage(driver);
+    DataManagementPage dataManagementPage=new DataManagementPage(driver);
+    FindPatientRecordPage findPatientRecordPage=new FindPatientRecordPage(driver);
+    RegisterPatientPage registerPatientPage=new RegisterPatientPage(driver);
+    ReportsPage reportsPage=new ReportsPage(driver);
 
     @When("user provide userName and password")
     public void user_provide_user_name_and_password(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
@@ -51,6 +51,8 @@ public class OpenMRS_Steps {
         Map<String,String > negativeValidateErrorMsg=dataTable.asMap();
         loginPage.negativeValidateErrorMsg(negativeValidateErrorMsg.get("errorMessage"));
     }
+
+    //KANAT
     @When("user clicks on the RegistrationDeskBtn")
     public void user_clicks_on_the_registration_desk_btn() {
 
@@ -143,6 +145,7 @@ public class OpenMRS_Steps {
     public void validate_expected_title_of_system_administration_of_system_administration_btn() {
 
     }
+    ///VERA
     @Then("user goes to the System Administrations and clicks Advanced Administrations")
     public void user_goes_to_the_system_administrations_and_clicks_advanced_administrations() {
 
