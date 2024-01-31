@@ -8,13 +8,13 @@ Feature:WebPages Functionality
     Then user choose the location and click on login button
     And validate title of main page
 
-  @LoginPageNegativeTest
+  @Task1
   Scenario: Handling Incorrect Login Credentials
     When user provide wrong wrongUserName and wrongPassword
       | wrongUserName | ADMIN    |
-      | wrongPassword | Admin123 |
+      | wrongPassword | ADMIN123 |
     Then user click in login btn validate text of errorMessage
-    |errorMessage|You must choose a location!|
+    |errorMessage|Invalid username/password. Please try again.|
 
   @Task2
   Scenario: Validation of all pages
