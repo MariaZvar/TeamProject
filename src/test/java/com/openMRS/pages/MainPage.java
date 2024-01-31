@@ -1,5 +1,6 @@
 package com.openMRS.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,64 +13,60 @@ public class MainPage {
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(xpath = "")
-    WebElement registrationDeskBtn;
+    @FindBy(xpath = "//a[@href='javascript:void(0);']")
+    WebElement location;
 
     @FindBy(xpath = "//li[@class='nav-item identifier']")
     WebElement userNameBtn;
 
 
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/activeVisits.page?app=coreapps.activeVisits']")
     WebElement findPatientRecordBtn;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/activeVisits.page?app=coreapps.activeVisits']")
     WebElement activeVisitsBtn;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/findpatient/findPatient.page?app=referenceapplication.vitals']")
     WebElement captureVitalsBtn;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/openmrs/registrationapp/registerPatient.page?appId=referenceapplication.registrationapp.registerPatient']")
     WebElement registerPatientBtn;
 
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/openmrs//appointmentschedulingui/home.page']")
     WebElement appointmentSchedulingBtn;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/openmrs/reportingui/reportsapp/home.page']")
     WebElement reportsBtn;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/datamanagement/dataManagement.page']")
     WebElement dataManagementBtn;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/openmrs/adminui/metadata/configureMetadata.page']")
     WebElement configureMetadataBtn;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/systemadministration/systemAdministration.page']")
     WebElement systemAdministrationBtn;
 
 //    @FindBy(xpath = "//a[@class='btn btn-default btn-lg button app big align-self-center']")
 //    List<WebElement> allDeparmentsPages;
 //    public void clickOnPage(String pageName){
 //        for (WebElement page : allDeparmentsPages){
-//
 //            if (page.getText().equalsIgnoreCase(pageName)){
 //                page.click();
 
-    public void validationOfUserNameAndLocation(WebDriver driver, String userName){
-        BrowserUtils.hoverOver(driver, userNameBtn);
-        WebElement actualAdmin = driver.findElement(By.xpath(
-                "//a[@href='/openmrs/adminui/myaccount/myAccount.page']"));
+    public void locationClick(){
+        location.click();
+    }
+//    public String actualLocation(){
+//
+//    }
+    public void validateUserName(String userName){
+        Assert.assertEquals(userNameBtn.getText(), userName);
     }
 
-    public void registrationDeskClick(WebDriver driver){
-        registrationDeskBtn.click();
-    }
 
-    public void validateLocation(){
-
-    }
-    
     public void findPatientRecordClick(){
         findPatientRecordBtn.click();
     }
@@ -105,8 +102,6 @@ public class MainPage {
     public void systemAdministrationClick(){
         systemAdministrationBtn.click();
     }
-
-
 
 
 }
