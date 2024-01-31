@@ -1,11 +1,11 @@
 package com.openMRS.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.List;
+import utils.BrowserUtils;
 
 public class MainPage {
     public MainPage(WebDriver driver){
@@ -13,41 +13,40 @@ public class MainPage {
     }
 
     @FindBy(xpath = "")
-    WebElement RegistrationDeskBtn;
+    WebElement registrationDeskBtn;
 
-    @FindBy(xpath = "")
-    WebElement UserNameBtn;
+    @FindBy(xpath = "//li[@class='nav-item identifier']")
+    WebElement userNameBtn;
 
-
-
-    @FindBy(xpath = "")
-    WebElement FindPatientRecordBtn;
-
-    @FindBy(xpath = "")
-    WebElement ActiveVisitsBtn;
-
-    @FindBy(xpath = "")
-    WebElement CaptureVitalsBtn;
-
-    @FindBy(xpath = "")
-    WebElement RegisterPatientBtn;
 
 
     @FindBy(xpath = "")
-    WebElement AppointmentSchedulingBtn;
+    WebElement findPatientRecordBtn;
 
     @FindBy(xpath = "")
-    WebElement ReportsBtn;
+    WebElement activeVisitsBtn;
 
     @FindBy(xpath = "")
-    WebElement DataManagementBtn;
+    WebElement captureVitalsBtn;
 
     @FindBy(xpath = "")
-    WebElement ConfigureMetadataBtn;
+    WebElement registerPatientBtn;
+
 
     @FindBy(xpath = "")
-    WebElement SystemAdministrationBtn;
+    WebElement appointmentSchedulingBtn;
 
+    @FindBy(xpath = "")
+    WebElement reportsBtn;
+
+    @FindBy(xpath = "")
+    WebElement dataManagementBtn;
+
+    @FindBy(xpath = "")
+    WebElement configureMetadataBtn;
+
+    @FindBy(xpath = "")
+    WebElement systemAdministrationBtn;
 
 //    @FindBy(xpath = "//a[@class='btn btn-default btn-lg button app big align-self-center']")
 //    List<WebElement> allDeparmentsPages;
@@ -57,50 +56,54 @@ public class MainPage {
 //            if (page.getText().equalsIgnoreCase(pageName)){
 //                page.click();
 
-    public void validationOfUserNameAndLocation(String userName){
-
+    public void validationOfUserNameAndLocation(WebDriver driver, String userName){
+        BrowserUtils.hoverOver(driver, userNameBtn);
+        WebElement actualAdmin = driver.findElement(By.xpath(
+                "//a[@href='/openmrs/adminui/myaccount/myAccount.page']"));
     }
 
+    public void registrationDeskClick(WebDriver driver){
+        registrationDeskBtn.click();
+    }
 
+    public void validateLocation(){
 
-    public void RegistrationDeskClick(){
-        RegistrationDeskBtn.click();
     }
     
-    public void FindPatientRecordClick(){
-        FindPatientRecordBtn.click();
+    public void findPatientRecordClick(){
+        findPatientRecordBtn.click();
     }
 
-     public void ActiveVisitsClick(){
-         ActiveVisitsBtn.click();
+     public void activeVisitsClick(){
+         activeVisitsBtn.click();
     }
 
-    public void CaptureVitalsClick(){
-        CaptureVitalsBtn.click();
+    public void captureVitalsClick(){
+        captureVitalsBtn.click();
     }
 
-    public void RegisterPatientClick(){
-        RegisterPatientBtn.click();
+    public void registerPatientClick(){
+        registerPatientBtn.click();
     }
 
-    public void AppointmentSchedulingClick(){
-        AppointmentSchedulingBtn.click();
+    public void appointmentSchedulingClick(){
+        appointmentSchedulingBtn.click();
     }
 
-    public void ReportsClick(){
-        ReportsBtn.click();
+    public void reportsClick(){
+        reportsBtn.click();
     }
 
-     public void DataManagementClick(){
-         DataManagementBtn.click();
+     public void dataManagementClick(){
+         dataManagementBtn.click();
     }
 
-    public void ConfigureMetadataClick(){
-        ConfigureMetadataBtn.click();
+    public void configureMetadataClick(){
+        configureMetadataBtn.click();
     }
 
-    public void SystemAdministrationClick(){
-        SystemAdministrationBtn.click();
+    public void systemAdministrationClick(){
+        systemAdministrationBtn.click();
     }
 
 

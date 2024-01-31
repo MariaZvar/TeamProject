@@ -1,13 +1,11 @@
 package com.openMRS.step_defenitions;
 
 import com.openMRS.pages.*;
-import com.openMRS.pages.*;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import utils.BrowserUtils;
-import utils.ConfigReader;
 import utils.DriverHelper;
 
 import java.util.Map;
@@ -52,11 +50,14 @@ public class OpenMRS_Steps {
         loginPage.negativeValidateErrorMsg(negativeValidateErrorMsg.get("errorMessage"));
     }
 
+
     //KANAT
+
     @When("user clicks on the RegistrationDeskBtn")
     public void user_clicks_on_the_registration_desk_btn() {
-
+        mainPage.registrationDeskClick(driver);
     }
+
     @When("validate location of RegistrationDeskBtn")
     public void validate_location_of_registration_desk_btn() {
 
