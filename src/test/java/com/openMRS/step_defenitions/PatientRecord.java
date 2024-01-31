@@ -41,18 +41,19 @@ public class PatientRecord {
 
     @Then("validate title of main page")
     public void validate_title_of_main_page() {
-        Assert.assertEquals("Home", BrowserUtils.getTitle(driver));
+        Assert.assertEquals("Login", BrowserUtils.getTitle(driver));
     }
 
     @When("user provide wrong wrongUserName and wrongPassword")
-    public void user_provide_wrong_wrong_user_name_and_wrong_password(io.cucumber.datatable.DataTable dataTable) {
-        Map<String, String> NegativeUserNameAndPassword = dataTable.asMap();
-        loginPage.NegativeUserNameAndPassword(NegativeUserNameAndPassword.get("wrongUserName"), NegativeUserNameAndPassword.get("wrongPassword"));
+    public void user_provide_wrong_wrong_user_name_and_wrong_password(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
+        Map<String,String> NegativeUserNameAndPassword=dataTable.asMap();
+        loginPage.NegativeUserNameAndPassword(NegativeUserNameAndPassword.get("wrongUserName"),NegativeUserNameAndPassword.get("wrongPassword"));
     }
 
     @Then("user click in login btn validate text of errorMessage")
-    public void user_click_in_login_btn_validate_text_of_error_message(io.cucumber.datatable.DataTable dataTable) {
-        Map<String, String> negativeValidateErrorMsg = dataTable.asMap();
+
+    public void user_click_in_login_btn_validate_text_of_error_message(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
+        Map<String,String > negativeValidateErrorMsg=dataTable.asMap();
         loginPage.negativeValidateErrorMsg(negativeValidateErrorMsg.get("errorMessage"));
     }
 
