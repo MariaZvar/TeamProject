@@ -10,7 +10,7 @@ import utils.DriverHelper;
 
 import java.util.Map;
 
-public class OpenMRS_Steps {
+public class PatientRecord {
     WebDriver driver= DriverHelper.getDriver();
     LoginPage loginPage=new LoginPage(driver);
     MainPage mainPage=new MainPage(driver);
