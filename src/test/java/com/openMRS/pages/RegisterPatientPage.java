@@ -5,63 +5,96 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import utils.BrowserUtils;
 
 public class RegisterPatientPage {
 
     public RegisterPatientPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
+
     }
 
 
-    // @FindBy(css = "#referenceapplication-registrationapp-registerPatient-homepageLink-referenceapplication-registrationapp-registerPatient-homepageLink-extension")
-    // WebElement RegisterPatient;
 
-    @FindBy(css = "#givenName")
+
+     @FindBy(xpath = "//a[4]")
+     WebElement registerPatient;
+
+    @FindBy(xpath = "//input[@name='givenName']")
     WebElement givenName;
 
-    @FindBy(css = "#familyName")
+    @FindBy(xpath = "//input[@name='familyName']")
     WebElement familyName;
 
     @FindBy(xpath = "//select[@id='gender-field']//following-sibling::option[@value='F']")
     WebElement gender;
 
 
-    @FindBy(css = "#birthdateDay-field")
+    @FindBy(xpath = "//input[@id='birthdateDay-field']")
     WebElement day;
 
-    @FindBy(css = "#birthdateMonth-field")
+    @FindBy(xpath = "//select[@name='birthdateMonth']")
     WebElement months;
 
-    @FindBy(css = "#birthdateYear-field")
+    @FindBy(xpath = "//input[@name='birthdateYear']")
     WebElement years;
 
-    @FindBy(css = "#address1")
+    @FindBy(xpath = "//input[@name='address1']")
     WebElement address;
 
-    @FindBy(css = "#country")
+    @FindBy(xpath = "//input[@name='country']")
     WebElement country;
 
-    @FindBy(css = "#stateProvince")
+    @FindBy(xpath= "//input[@name='stateProvince']")
     WebElement state;
 
-    @FindBy(css = "#cityVillage")
+    @FindBy(xpath= "//input[@name='cityVillage']")
     WebElement city;
 
-    @FindBy(css = "#postalCode")
+    @FindBy(xpath = "//input[@name='cityVillage']")
     WebElement zipCode;
 
-    @FindBy(css = "#fr8056-field")
+    @FindBy(xpath = "//input[@name='phoneNumber']")
     WebElement phone;
 
     @FindBy(xpath = "//button[.='submitButton confirm right']")
     public WebElement createAccountBtn;
+
+    @FindBy(xpath = "//input[@id='submit']")
+    public WebElement confirm2;
+
+    @FindBy(xpath = "//ul[@id='formBreadcrumb']//span[contains(.,'Name')]")
+    WebElement nameBtn;
+    @FindBy(xpath = "//span[contains(.,'Gender')]")
+    WebElement genderBtn;
+    @FindBy(xpath = "//span[contains(.,'Birthdate')]")
+    WebElement birthdateBtn;
+    @FindBy(xpath = "//span[contains(.,'Address')]")
+    WebElement addressBtn;
+    @FindBy(xpath = "//span[contains(.,'Phone Number')]")
+    WebElement phonenumberBtn;
+    @FindBy(xpath = "//span[contains(.,'Relationships')]")
+    WebElement relativesBtn;
+
+    @FindBy(xpath = "//span[contains(.,'Confirm')]")
+    WebElement confirm1;
+
+    @FindBy(xpath = "//div[@class='float-sm-right']")
+    WebElement patientId;
+
 
 
     public void firstNameLastName(String firstName, String lastName) {
 
         this.givenName.sendKeys(firstName);
         this.familyName.sendKeys(lastName);
+    }
+
+
+    public void clikOnRegisterPatient(){
+
+registerPatient.click();
     }
 
     public void chooseBirthdate(String days, String months, String years) {
@@ -103,5 +136,41 @@ public class RegisterPatientPage {
         String actualTitle = BrowserUtils.getTitle(driver);
         Assert.assertEquals(actualTitle, OpenMRS_RegisterPatient, "Failed validation");
 
+    }
+
+    public void fillInfoOnPatientPager(){
+
+       givenName.sendKeys("Codefish") ;
+       familyName.sendKeys("Codefish18");
+       genderBtn.click();
+
+      gender.click();
+      birthdateBtn.click();
+       day.sendKeys("16");
+       Select select= new Select(months);
+       select.selectByVisibleText("May");
+       years.sendKeys("1992");
+       addressBtn.click();
+       address.sendKeys("2200 Devon");
+       country.sendKeys("USA");
+       state.sendKeys("IL");
+       city.sendKeys("Das Plaines");
+       zipCode.sendKeys("60618");
+       phonenumberBtn.click();
+       phone.sendKeys("6753438899");
+       relativesBtn.click();
+       confirm1.click();
+       confirm2.click();
+
+
+
+
+
+
+    }
+
+    public void patientId(){
+        String patient= patientId.getText() ;
+        System.out.println(patient);
     }
 }
