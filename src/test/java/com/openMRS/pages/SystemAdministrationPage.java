@@ -7,17 +7,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-public class AppointmentSchedulingPage {
+public class SystemAdministrationPage {
 
-    public AppointmentSchedulingPage(WebDriver driver){
+    public SystemAdministrationPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//div[@class='logo']")
     WebElement logoBtn;
-
-    public void validationOfFindPatientRecordPage(WebDriver driver, String expectedTitleOfAppointmentScheduling){
+    public void validationOfSystemAdministration(WebDriver driver, String expectedTitleSystemAdministration){
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, expectedTitleOfAppointmentScheduling, "Failed validation");
+        Assert.assertEquals(actualTitle, expectedTitleSystemAdministration, "Failed validation");
     }
     public void getToHomePage(){
         logoBtn.click();

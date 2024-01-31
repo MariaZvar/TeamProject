@@ -126,12 +126,14 @@ registerPatient.click();
         createAccountBtn.click();
     }
 
-
+    @FindBy(xpath = "//div[@class='logo']")
+    WebElement logoBtn;
     public void validationOfFindPatientRecordPage(WebDriver driver, String OpenMRS_RegisterPatient){
-
         String actualTitle = BrowserUtils.getTitle(driver);
         Assert.assertEquals(actualTitle, OpenMRS_RegisterPatient, "Failed validation");
-
+    }
+    public void getToHomePage(){
+        logoBtn.click();
     }
 
     public void fillInfoOnPatientPager(){

@@ -14,72 +14,83 @@ Feature:WebPages Functionality
       | wrongUserName | ADMIN    |
       | wrongPassword | ADMIN123 |
     Then user click in login btn validate text of errorMessage
+      | errorMessage | You must choose a location! |
     |errorMessage|Invalid username/password. Please try again.|
+
 
   @Task2
   Scenario: Validation of all pages
     When user clicks on the RegistrationDeskBtn
-    When validate location of RegistrationDeskBtn
+    When validate expectedLocation
+      | expectedLocation | Registration Desk |
     And validate if userName is displayed
       | userName | admin |
 
     When user clicks on the FindPatientRecordBtn
     When validate expectedTitleOfFindPatientPage of FindPatientRecord
+      | expectedTitleOfFindPatientPage | OpenMRS Electronic Medical Record |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
-      | expectedTitleOfFindPatientPage | title |
+      | expectedTitleHomePage | Home |
 
     When user clicks on the ActiveVisitsBtn
     When validate expectedTitleOfActiveVisits of ActiveVisitsBtn
+      | expectedTitleOfActiveVisits | OpenMRS Electronic Medical Record |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
-      | expectedTitleOfActiveVisits | title |
+      | expectedTitleHomePage | Home |
 
     When user clicks on the CaptureVitalsBtn
     When validate expectedTitleOfCaptureVitals of CaptureVitalsBtn
+      | expectedTitleOfCaptureVitals | OpenMRS Electronic Medical Record |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
-      | expectedTitleOfCaptureVitals | title |
+      | expectedTitleHomePage | Home |
 
     When user clicks on the RegisterPatientBtn
     When validate expectedTitleOfRegisterPatient of RegisterPatientBtn
+      | expectedTitleOfRegisterPatient | OpenMRS Electronic Medical Record |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
-      | expectedTitleOfRegisterPatient | title |
+      | expectedTitleHomePage | Home |
 
     When user clicks on the AppointmentSchedulingBtn
     When validate expectedTitleOfAppointmentScheduling of AppointmentSchedulingBtn
+      | expectedTitleOfAppointmentScheduling | OpenMRS Electronic Medical Record |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
-      | expectedTitleOfAppointmentScheduling | title |
+      | expectedTitleHomePage | Home |
 
     When user clicks on the ReportsBtn
     When validate expectedTitleOfReports of ReportsBtn
+      | expectedTitleOfReports | OpenMRS Electronic Medical Record |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
-      | expectedTitleOfReports | title |
+      | expectedTitleHomePage | Home |
 
     When user clicks on the DataManagementBtn
     When validate expectedTitleOfDataManagement of DataManagementBtn
+      | expectedTitleOfDataManagement | OpenMRS Electronic Medical Record |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
-      | expectedTitleOfDataManagement | title |
+      | expectedTitleHomePage | Home |
 
     When user clicks on the ConfigureMetadataBtn
     When validate expectedTitleOfConfigureMetadata of ConfigureMetadataBtn
+      | expectedTitleOfConfigureMetadata | OpenMRS Electronic Medical Record |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
-      | expectedTitleOfConfigureMetadata | title |
+      | expectedTitleHomePage | Home |
 
     When user clicks on the SystemAdministrationBtn
     When validate expectedTitleOfSystemAdministration of SystemAdministrationBtn
+      | expectedTitleOfSystemAdministration |  OpenMRS Electronic Medical Record  |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
-      | expectedTitleOfSystemAdministration | title |
+      | expectedTitleHomePage | Home |
 
 
-
- @Task3
+  @Task3
   Scenario: advanced Management
 
     Then user goes to the System Administrations and clicks Advanced Administrations
