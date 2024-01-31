@@ -19,8 +19,10 @@ public class LoginPage {
     WebElement location;
     @FindBy(css = "input[id='loginButton']")
     WebElement loginBtn;
-    @FindBy(css = "span[id='sessionLocationError']")
+    @FindBy(css = "div[id='error-message']")
     WebElement errorMsg;
+    @FindBy(css = "i[class='icon-signout small']")
+    WebElement logOutBtn;
 
     public void PositiveUserNameAndPassword(String userName, String password){
 
@@ -30,13 +32,16 @@ public class LoginPage {
     public void PositiveLocation(){
         location.click();
         loginBtn.click();
+        logOutBtn.click();
     }
 
-    public void NegativeUserNameAndPassword(String wrongUserName, String wrongPassword){
+    public void NegativeUserNameAndPassword(String wrongUserName, String wrongPassword) throws InterruptedException {
+        Thread.sleep(3000);
         this.userNameBtn.sendKeys(wrongUserName);
         this.passwordBtn.sendKeys(wrongPassword);
     }
-    public void negativeValidateErrorMsg(String errorMessage){
+    public void negativeValidateErrorMsg(String errorMessage) throws InterruptedException {
+        Thread.sleep(3000);
         loginBtn.click();
         String actualText=this.errorMsg.getText();
         Assert.assertEquals(actualText,errorMessage);

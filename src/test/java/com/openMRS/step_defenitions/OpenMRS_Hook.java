@@ -10,7 +10,7 @@ import utils.DriverHelper;
 
 public class OpenMRS_Hook {
     WebDriver driver= DriverHelper.getDriver();
-    @Before
+   @Before
     public void setUp(){
        driver.get(ConfigReader.readProperty("projectURL"));
     }
