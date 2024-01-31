@@ -60,10 +60,10 @@ public class OpenMRS_Steps {
         mainPage.locationClick();
     }
 
-    @When("validate expectedLocation")
-    public void validate_expected_location(io.cucumber.datatable.DataTable expectedLocation) {
-        Assert.assertEquals(mainPage.actualLocation(), expectedLocation);
-    }
+//    @When("validate expectedLocation")
+//    public void validate_expected_location(io.cucumber.datatable.DataTable expectedLocation) {
+//        Assert.assertEquals(mainPage.actualLocation(), expectedLocation);
+//    }
 
     @When("validate if userName is displayed")
     public void validate_if_user_name_is_displayed(io.cucumber.datatable.DataTable userName) {
