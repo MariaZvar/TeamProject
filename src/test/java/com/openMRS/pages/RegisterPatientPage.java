@@ -14,10 +14,6 @@ public class RegisterPatientPage {
         PageFactory.initElements(driver, this);
 
     }
-
-
-
-
      @FindBy(xpath = "//a[4]")
      WebElement registerPatient;
 
@@ -161,12 +157,6 @@ registerPatient.click();
        relativesBtn.click();
        confirm1.click();
        confirm2.click();
-
-
-
-
-
-
     }
 
     public void patientId(){
