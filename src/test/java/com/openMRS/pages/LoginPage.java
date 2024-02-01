@@ -33,15 +33,19 @@ public class LoginPage {
         location.click();
         loginBtn.click();
 
+
+
+//        logOutBtn.click();
+
     }
 
     public void NegativeUserNameAndPassword(String wrongUserName, String wrongPassword) throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         this.userNameBtn.sendKeys(wrongUserName);
         this.passwordBtn.sendKeys(wrongPassword);
     }
     public void negativeValidateErrorMsg(String errorMessage) throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         loginBtn.click();
         String actualText=this.errorMsg.getText();
         Assert.assertEquals(actualText,errorMessage);

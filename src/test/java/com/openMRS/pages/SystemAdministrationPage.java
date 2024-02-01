@@ -7,32 +7,18 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-import java.util.List;
+public class SystemAdministrationPage {
 
-public class ActiveVisitsPage {
-
-    public ActiveVisitsPage(WebDriver driver){
+    public SystemAdministrationPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
-
     @FindBy(xpath = "//div[@class='logo']")
     WebElement logoBtn;
-    public void validationActiveVisitsPage(WebDriver driver, String expectedTitleOfActiveVisits){
+    public void validationOfSystemAdministration(WebDriver driver, String expectedTitleSystemAdministration){
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, expectedTitleOfActiveVisits);
+        Assert.assertEquals(actualTitle, expectedTitleSystemAdministration);
     }
-
     public void getToHomePage(){
         logoBtn.click();
-
     }
-
-        public class ActiveVisits {
-
-
-
-
-        }
-        }
-
-
+}

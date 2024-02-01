@@ -1,72 +1,103 @@
 package com.openMRS.pages;
 
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.BrowserUtils;
 
 public class MainPage {
     public MainPage(WebDriver driver){
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(xpath = "")
-    WebElement RegistrationDeskBtn;
+    @FindBy(xpath = "//a[@href='javascript:void(0);']")
+    WebElement location;
 
-    @FindBy(xpath = "")
-    WebElement UserNameBtn;
-
-    @FindBy(xpath = "")
-    WebElement FindPatientRecordBtn;
-
-    @FindBy(xpath = "")
-    WebElement ActiveVisitsBtn;
-
-    @FindBy(xpath = "")
-    WebElement CaptureVitalsBtn;
-
-    @FindBy(xpath = "")
-    WebElement RegisterPatientBtn;
+    @FindBy(xpath = "//li[@class='nav-item identifier']")
+    WebElement userNameBtn;
 
 
 
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/findpatient/findPatient.page?app=coreapps.findPatient']")
+    WebElement findPatientRecordBtn;
+
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/activeVisits.page?app=coreapps.activeVisits']")
+    WebElement activeVisitsBtn;
+
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/findpatient/findPatient.page?app=referenceapplication.vitals']")
+    WebElement captureVitalsBtn;
+
+    @FindBy(xpath = "//a[@href='/openmrs/registrationapp/registerPatient.page?appId=referenceapplication.registrationapp.registerPatient']")
+    WebElement registerPatientBtn;
 
 
-    @FindBy(xpath = "")
-    WebElement AppointmentSchedulingBtn;
+    @FindBy(xpath = "//a[@href='/openmrs//appointmentschedulingui/home.page']")
+    WebElement appointmentSchedulingBtn;
 
-    @FindBy(xpath = "")
-    WebElement ReportsBtn;
+    @FindBy(xpath = "//a[@href='/openmrs/reportingui/reportsapp/home.page']")
+    WebElement reportsBtn;
 
-    @FindBy(xpath = "")
-    WebElement DataManagementBtn;
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/datamanagement/dataManagement.page']")
+    WebElement dataManagementBtn;
 
-    @FindBy(xpath = "")
-    WebElement ConfigureMetadataBtn;
+    @FindBy(xpath = "//a[@href='/openmrs/adminui/metadata/configureMetadata.page']")
+    WebElement configureMetadataBtn;
 
-    @FindBy(xpath = "")
-    WebElement SystemAdministrationBtn;
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/systemadministration/systemAdministration.page']")
+    WebElement systemAdministrationBtn;
 
+//    @FindBy(xpath = "//a[@class='btn btn-default btn-lg button app big align-self-center']")
+//    List<WebElement> allDeparmentsPages;
+//    public void clickOnPage(String pageName){
+//        for (WebElement page : allDeparmentsPages){
+//            if (page.getText().equalsIgnoreCase(pageName)){
+//                page.click();
 
-
-
-
-
-
-
-
-
-
-
-
-    public void validationOfUserNameAndLocation(String userName){
-
+    public void validateLocation(String expectedLocation){
+        Assert.assertEquals(location.getText(),expectedLocation);
+    }
+    public void validateUserName(String userName){
+        Assert.assertEquals(userNameBtn.getText(), userName);
     }
 
-    public void FindPatientRecordPage(){
-
-        FindPatientRecordBtn.click();
-
+    public void findPatientRecordClick(){
+        findPatientRecordBtn.click();
     }
+
+     public void activeVisitsClick(){
+         activeVisitsBtn.click();
+    }
+
+    public void captureVitalsClick(){
+        captureVitalsBtn.click();
+    }
+
+    public void registerPatientClick(){
+        registerPatientBtn.click();
+    }
+
+    public void appointmentSchedulingClick(){
+        appointmentSchedulingBtn.click();
+    }
+
+    public void reportsClick(){
+        reportsBtn.click();
+    }
+
+     public void dataManagementClick(){
+         dataManagementBtn.click();
+    }
+
+    public void configureMetadataClick(){
+        configureMetadataBtn.click();
+    }
+
+    public void systemAdministrationClick(){
+        systemAdministrationBtn.click();
+    }
+
 
 }
