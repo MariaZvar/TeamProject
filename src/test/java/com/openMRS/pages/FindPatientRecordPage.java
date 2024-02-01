@@ -17,7 +17,7 @@ public class FindPatientRecordPage {
 
     public void validationOfFindPatientRecordPage(WebDriver driver, String expectedTitleOfFindPatientPage){
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, expectedTitleOfFindPatientPage, "Failed validation");
+        Assert.assertEquals(actualTitle, expectedTitleOfFindPatientPage);
     }
 
     public void getToHomePage(){
@@ -26,6 +26,6 @@ public class FindPatientRecordPage {
 
     public void validateHomePage(WebDriver driver, String expectedTitleHomePage ){
         String actualTitle = driver.getTitle();
-        Assert.assertEquals(actualTitle, expectedTitleHomePage, "Failed validation");
+        Assert.assertEquals(actualTitle, expectedTitleHomePage);
     }
 }

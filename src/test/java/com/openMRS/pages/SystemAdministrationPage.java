@@ -16,7 +16,7 @@ public class SystemAdministrationPage {
     WebElement logoBtn;
     public void validationOfSystemAdministration(WebDriver driver, String expectedTitleSystemAdministration){
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, expectedTitleSystemAdministration, "Failed validation");
+        Assert.assertEquals(actualTitle, expectedTitleSystemAdministration);
     }
     public void getToHomePage(){
         logoBtn.click();

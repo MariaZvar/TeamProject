@@ -130,7 +130,7 @@ registerPatient.click();
     WebElement logoBtn;
     public void validationOfFindPatientRecordPage(WebDriver driver, String OpenMRS_RegisterPatient){
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, OpenMRS_RegisterPatient, "Failed validation");
+        Assert.assertEquals(actualTitle, OpenMRS_RegisterPatient);
     }
     public void getToHomePage(){
         logoBtn.click();

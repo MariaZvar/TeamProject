@@ -17,7 +17,7 @@ public class ActiveVisitsPage {
     WebElement logoBtn;
     public void validationActiveVisitsPage(WebDriver driver, String expectedTitleOfActiveVisits){
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, expectedTitleOfActiveVisits, "Failed validation");
+        Assert.assertEquals(actualTitle, expectedTitleOfActiveVisits);
     }
 
     public void getToHomePage(){

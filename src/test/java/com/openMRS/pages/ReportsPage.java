@@ -16,7 +16,7 @@ public class ReportsPage {
 
     public void validationOfFindPatientRecordPage(WebDriver driver, String expectedTitleOfReports){
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, expectedTitleOfReports, "Failed validation");
+        Assert.assertEquals(actualTitle, expectedTitleOfReports);
     }
     public void getToHomePage(){
         logoBtn.click();

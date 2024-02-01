@@ -15,9 +15,9 @@ public class DataManagementPage {
     @FindBy(xpath = "//div[@class='logo']")
     WebElement logoBtn;
 
-    public void validationOfFindPatientRecordPage(WebDriver driver, String expectedTitleOfDataManagement){
+    public void validationDataManagement(WebDriver driver, String expectedTitleOfDataManagement){
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, expectedTitleOfDataManagement, "Failed validation");
+        Assert.assertEquals(actualTitle, expectedTitleOfDataManagement);
     }
     public void getToHomePage(){
         logoBtn.click();

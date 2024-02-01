@@ -16,7 +16,7 @@ public class ConfigureMetadataPage {
     WebElement logoBtn;
     public void validationOfFindPatientRecordPage(WebDriver driver, String expectedTitleOfConfigureMetadata){
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, expectedTitleOfConfigureMetadata, "Failed validation");
+        Assert.assertEquals(actualTitle, expectedTitleOfConfigureMetadata);
     }
     public void getToHomePage(){
         logoBtn.click();

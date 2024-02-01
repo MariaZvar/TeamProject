@@ -17,7 +17,7 @@ public class AppointmentSchedulingPage {
 
     public void validationOfFindPatientRecordPage(WebDriver driver, String expectedTitleOfAppointmentScheduling){
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, expectedTitleOfAppointmentScheduling, "Failed validation");
+        Assert.assertEquals(actualTitle, expectedTitleOfAppointmentScheduling);
     }
     public void getToHomePage(){
         logoBtn.click();

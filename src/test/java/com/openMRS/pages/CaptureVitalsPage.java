@@ -17,7 +17,7 @@ public class CaptureVitalsPage {
 
     public void validationOfOpenMRS_ActiveVisitsPage(WebDriver driver, String expectedTitleOfCaptureVitals) {
         String actualTitle = BrowserUtils.getTitle(driver);
-        Assert.assertEquals(actualTitle, expectedTitleOfCaptureVitals, "Failed validation");
+        Assert.assertEquals(actualTitle, expectedTitleOfCaptureVitals);
     }
     public void getToHomePage(){
         logoBtn.click();

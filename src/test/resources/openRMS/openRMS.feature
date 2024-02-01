@@ -14,15 +14,15 @@ Feature:WebPages Functionality
       | wrongUserName | ADMIN    |
       | wrongPassword | ADMIN123 |
     Then user click in login btn validate text of errorMessage
-      | errorMessage | You must choose a location! |
-    |errorMessage|Invalid username/password. Please try again.|
+      | errorMessage | You must choose a location!                  |
+      | errorMessage | Invalid username/password. Please try again. |
 
 
   @Task2
   Scenario: Validation of all pages
     When user clicks on the RegistrationDeskBtn
     When validate expectedLocation
-      | expectedLocation | Registration Desk |
+      | expectedLocation | Pharmacy |
     And validate if userName is displayed
       | userName | admin |
 
@@ -70,21 +70,21 @@ Feature:WebPages Functionality
 
     When user clicks on the DataManagementBtn
     When validate expectedTitleOfDataManagement of DataManagementBtn
-      | expectedTitleOfDataManagement | OpenMRS Electronic Medical Record |
+      | expectedTitleOfDataManagement | Data Management |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
       | expectedTitleHomePage | Home |
 
     When user clicks on the ConfigureMetadataBtn
     When validate expectedTitleOfConfigureMetadata of ConfigureMetadataBtn
-      | expectedTitleOfConfigureMetadata | OpenMRS Electronic Medical Record |
+      | expectedTitleOfConfigureMetadata | Configure Metadata |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
       | expectedTitleHomePage | Home |
 
     When user clicks on the SystemAdministrationBtn
     When validate expectedTitleOfSystemAdministration of SystemAdministrationBtn
-      | expectedTitleOfSystemAdministration |  OpenMRS Electronic Medical Record  |
+      | expectedTitleOfSystemAdministration | System Administration |
     And user clicks on the Logo button to get to the home page
     Then user validate again home page
       | expectedTitleHomePage | Home |

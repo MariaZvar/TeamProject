@@ -21,7 +21,7 @@ public class MainPage {
 
 
 
-    @FindBy(xpath = "//a[@href='/openmrs/coreapps/activeVisits.page?app=coreapps.activeVisits']")
+    @FindBy(xpath = "//a[@href='/openmrs/coreapps/findpatient/findPatient.page?app=coreapps.findPatient']")
     WebElement findPatientRecordBtn;
 
     @FindBy(xpath = "//a[@href='/openmrs/coreapps/activeVisits.page?app=coreapps.activeVisits']")
@@ -56,16 +56,12 @@ public class MainPage {
 //            if (page.getText().equalsIgnoreCase(pageName)){
 //                page.click();
 
-    public void locationClick(){
-        location.click();
+    public void validateLocation(String expectedLocation){
+        Assert.assertEquals(location.getText(),expectedLocation);
     }
-//    public String actualLocation(){
-//
-//    }
     public void validateUserName(String userName){
         Assert.assertEquals(userNameBtn.getText(), userName);
     }
-
 
     public void findPatientRecordClick(){
         findPatientRecordBtn.click();
