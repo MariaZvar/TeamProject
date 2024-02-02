@@ -257,6 +257,76 @@ registerPatientPage.fillInfoOnPatientPager();
     }
 
 
+    //dynamic patient register
+
+    @Then("user enters all the valid information like {string} {string} {string} {string} {string}{string} {string} {string} {string} {string} {string}")
+    public void user_enters_all_the_valid_information_like(String givenName, String familyName, String day, String month, String years, String address, String country, String state,String city, String zipcode, String phone) {
+        registerPatientPage.registerPatient(givenName,familyName,day,month,years,address,country,state,city,zipcode,phone);
+
+    }
+
+// Patient feature functionality--Amit
+
+    @Given("user login with {string} for username and {string} for password and select location and click login button")
+    public void user_login_with_for_username_and_for_password_and_select_location_and_click_login_button(String username, String password) {
+        loginPage.PositiveUserNameAndPassword(username,password);
+        loginPage.PositiveLocation();
+    }
+
+    @When("user is on home page and clicks find patient record")
+    public void user_is_on_home_page_and_clicks_find_patient_record() {
+        mainPage.findPatientRecordClick();
+    }
+    @Then("user makes sure search bar is displayed and clear button is displayed")
+    public void user_makes_sure_search_bar_is_displayed_and_clear_button_is_displayed() throws InterruptedException {
+        findPatientRecordPage.validateSearch();
+        findPatientRecordPage.validateClearBtn("abcdef");
+        loginPage.setLogout();
+    }
+//patient feature test 2
+
+    @Given("user login with {string} and {string} and select location and click login button")
+    public void user_login_with_and_and_select_location_and_click_login_button(String username, String password) {
+        loginPage.PositiveUserNameAndPassword(username,password);
+        loginPage.PositiveLocation();
+    }
+    @When("user sends registered {string} to searchBar and validate with idsOrNames")
+    public void user_sends_registered_to_search_bar_and_validate_with_ids_or_names(String idOrName) throws InterruptedException {
+        findPatientRecordPage.searchPatient(idOrName);
+        Thread.sleep(2000);
+        findPatientRecordPage.validatePatient(idOrName);
+        loginPage.setLogout();
+    }
+
+//patient feature test 3
+
+    @Given("user login and clicks find patient record page")
+    public void user_login_and_clicks_find_patient_record_page() {
+       loginPage.PositiveUserNameAndPassword("admin","Admin123");
+       loginPage.PositiveLocation();
+       mainPage.findPatientRecordClick();
+    }
+    @When("user is on patient record page he search for patient with {string} in search bar")
+    public void user_is_on_patient_record_page_he_search_for_patient_with_in_search_bar(String id) {
+       findPatientRecordPage.searchPatient(id);
+    }
+    @Then("he clicks on patient id in result box and navigates to profile page")
+    public void he_clicks_on_patient_id_in_result_box_and_navigates_to_profile_page() {
+        findPatientRecordPage.clickOnFirstResult();
+    }
+    @Then("user validates all the headers are displayed and validates {string}")
+    public void user_validates_all_the_headers_are_displayed_and_validates(String id) {
+        findPatientRecordPage.validateHeaders();
+        findPatientRecordPage.validateInfoBody();
+        findPatientRecordPage.validatePatientId(id);
+
+    }
+    @Then("user delete the patient and confirm")
+    public void user_delete_the_patient_and_confirm() {
+findPatientRecordPage.setDeletePatient();
+
+    }
+
 
 
 

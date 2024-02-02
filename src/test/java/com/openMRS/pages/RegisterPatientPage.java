@@ -77,7 +77,7 @@ public class RegisterPatientPage {
     WebElement confirm1;
 
     @FindBy(xpath = "//div[@class='float-sm-right']")
-    WebElement patientId;
+    WebElement patientInfo;
 
 
 
@@ -117,10 +117,7 @@ registerPatient.click();
         this.phone.sendKeys(phone);
     }
 
-    public void gender(String gender) {
 
-        this.gender.sendKeys(gender);
-    }
 
     public void clickOnCreateAccountBtn() {
         createAccountBtn.click();
@@ -160,9 +157,37 @@ registerPatient.click();
        confirm1.click();
        confirm2.click();
     }
+    public void setGender(String gender){
+        Select select= new Select(this.gender);
+        select.selectByVisibleText(gender);
+    }
 
+
+    public void registerPatient(String givenName,String familyName,String day,String month,String year,String address,String country,String state,String city,String zipcode,String phone){
+        this.givenName.sendKeys(givenName) ;
+        this.familyName.sendKeys(familyName);
+        genderBtn.click();
+
+       gender.click();
+        birthdateBtn.click();
+        this.day.sendKeys(day);
+        Select select= new Select(months);
+        select.selectByVisibleText(month);
+        years.sendKeys(year);
+        addressBtn.click();
+        this.address.sendKeys(address);
+        this.country.sendKeys(country);
+        this.state.sendKeys(state);
+        this.city.sendKeys(city);
+        this.zipCode.sendKeys(zipcode);
+        phonenumberBtn.click();
+        this.phone.sendKeys(phone);
+
+        confirm1.click();
+        confirm2.click();
+    }
     public void patientId(){
-        String patient= patientId.getText() ;
-        System.out.println(patient);
+        String patientId= patientInfo.getText() ;
+        System.out.println(patientId);
     }
 }
