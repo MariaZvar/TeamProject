@@ -38,6 +38,9 @@ public class LoginPage {
 //        logOutBtn.click();
 
     }
+    public void setLogout(){
+        logOutBtn.click();
+    }
 
     public void NegativeUserNameAndPassword(String wrongUserName, String wrongPassword) throws InterruptedException {
         Thread.sleep(1000);

@@ -257,6 +257,7 @@ public class PatientRecord {
     }
 
 
+
 //Alena -active visits
 
 
@@ -314,6 +315,8 @@ public class PatientRecord {
     @Then("patient should be able to check that  he is no longer in active visits")
     public void patient_should_be_able_to_check_that_he_is_no_longer_in_active_visits() throws InterruptedException {
         activeVisitsPage.validateEmptyActivePatientList(driver);
+        loginPage.setLogout();
         Thread.sleep(2000);
     }
+
 }
