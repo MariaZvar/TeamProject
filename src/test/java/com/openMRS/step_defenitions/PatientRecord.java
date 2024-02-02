@@ -257,62 +257,6 @@ registerPatientPage.fillInfoOnPatientPager();
     }
 
 
-//Alena -active visits
-
-    @Given("the User is on the login page  he provides login credentials")
-    public void the_user_is_on_the_login_page_he_provides_login_credentials() {
-       loginPage.PositiveUserNameAndPassword("admin","Admin123");
-    }
-    @Then("user select the location and click login")
-    public void user_select_the_location_and_click_login() {
-       loginPage.PositiveLocation();
-    }
-    @When("Find Patient button is displayed  the user clicks on Find patient")
-    public void find_patient_button_is_displayed_the_user_clicks_on_find_patient() {
-
-    }
-    @Then("user search by id and clicks patient")
-    public void user_search_by_id_and_clicks_patient() {
-
-    }
-    @Then("Active patient requests  Start Visit and confirms")
-    public void active_patient_requests_start_visit_and_confirms() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("the User adds  a  Note to visit")
-    public void the_user_adds_a_note_to_visit() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("requests cancel  and goes to his profile Family Name")
-    public void requests_cancel_and_goes_to_his_profile_family_name() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("Active patient ends the visit  and confirms with Yes")
-    public void active_patient_ends_the_visit_and_confirms_with_yes() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("the User navigates back to the main page")
-    public void the_user_navigates_back_to_the_main_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("User enters  Active Visit")
-    public void user_enters_active_visit() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("patient should be able to check that  he is no longer in active visits")
-    public void patient_should_be_able_to_check_that_he_is_no_longer_in_active_visits() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-
-
 
 
 
