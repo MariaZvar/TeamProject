@@ -123,7 +123,7 @@ Feature:WebPages Functionality
     And  User enters  Active Visit
     Then patient should be able to check that  he is no longer in active visits
 
-
+#alena 12.30
 
 
 
