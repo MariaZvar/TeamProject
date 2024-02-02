@@ -111,6 +111,22 @@ Feature:WebPages Functionality
 
 
 
+  @Task5   #Alena
+  Scenario: Managing Active Visits
+
+    When Find Patient button is displayed  the user clicks on Find patient
+    Then user search by id and clicks patient
+    Then Active patient requests  Start Visit and confirms
+    And the User adds  a  Note to visit and requests cancel
+    Then User cancels the visit and confirms with yes
+    When the User navigates back to the main page
+    And  User enters  Active Visit
+    Then patient should be able to check that  he is no longer in active visits
+
+
+
+
+
 
 
 

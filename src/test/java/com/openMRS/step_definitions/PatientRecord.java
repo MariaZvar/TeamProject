@@ -1,30 +1,27 @@
-package com.openMRS.step_defenitions;
+package com.openMRS.step_definitions;
 
 import com.openMRS.pages.*;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import utils.BrowserUtils;
 import utils.DriverHelper;
 
 import java.util.Map;
 
 public class PatientRecord {
 
-    WebDriver driver= DriverHelper.getDriver();
-    LoginPage loginPage=new LoginPage(driver);
-    MainPage mainPage=new MainPage(driver);
-    ActiveVisitsPage activeVisitsPage=new ActiveVisitsPage(driver);
-    AppointmentSchedulingPage appointmentSchedulingPage=new AppointmentSchedulingPage(driver);
-    CaptureVitalsPage captureVitalsPage=new CaptureVitalsPage(driver);
-    ConfigureMetadataPage configureMetadataPage=new ConfigureMetadataPage(driver);
-    DataManagementPage dataManagementPage=new DataManagementPage(driver);
-    FindPatientRecordPage findPatientRecordPage=new FindPatientRecordPage(driver);
-    RegisterPatientPage registerPatientPage=new RegisterPatientPage(driver);
-    ReportsPage reportsPage=new ReportsPage(driver);
+    WebDriver driver = DriverHelper.getDriver();
+    LoginPage loginPage = new LoginPage(driver);
+    MainPage mainPage = new MainPage(driver);
+    ActiveVisitsPage activeVisitsPage = new ActiveVisitsPage(driver);
+    AppointmentSchedulingPage appointmentSchedulingPage = new AppointmentSchedulingPage(driver);
+    CaptureVitalsPage captureVitalsPage = new CaptureVitalsPage(driver);
+    ConfigureMetadataPage configureMetadataPage = new ConfigureMetadataPage(driver);
+    DataManagementPage dataManagementPage = new DataManagementPage(driver);
+    FindPatientRecordPage findPatientRecordPage = new FindPatientRecordPage(driver);
+    RegisterPatientPage registerPatientPage = new RegisterPatientPage(driver);
+    ReportsPage reportsPage = new ReportsPage(driver);
     SystemAdministrationPage systemAdministrationPage = new SystemAdministrationPage(driver);
     private RegisterPatientPage registrationPage;
 
@@ -48,17 +45,16 @@ public class PatientRecord {
 
     @When("user provide wrong wrongUserName and wrongPassword")
     public void user_provide_wrong_wrong_user_name_and_wrong_password(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
-        Map<String,String> NegativeUserNameAndPassword=dataTable.asMap();
-        loginPage.NegativeUserNameAndPassword(NegativeUserNameAndPassword.get("wrongUserName"),NegativeUserNameAndPassword.get("wrongPassword"));
+        Map<String, String> NegativeUserNameAndPassword = dataTable.asMap();
+        loginPage.NegativeUserNameAndPassword(NegativeUserNameAndPassword.get("wrongUserName"), NegativeUserNameAndPassword.get("wrongPassword"));
     }
 
     @Then("user click in login btn validate text of errorMessage")
 
     public void user_click_in_login_btn_validate_text_of_error_message(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
-        Map<String,String > negativeValidateErrorMsg=dataTable.asMap();
+        Map<String, String> negativeValidateErrorMsg = dataTable.asMap();
         loginPage.negativeValidateErrorMsg(negativeValidateErrorMsg.get("errorMessage"));
     }
-
 
 
     //KANAT
@@ -88,15 +84,18 @@ public class PatientRecord {
     public void user_clicks_on_the_find_patient_record_btn() {
         mainPage.findPatientRecordClick();
     }
+
     @When("validate expectedTitleOfFindPatientPage of FindPatientRecord")
     public void validate_expected_title_of_find_patient_page_of_find_patient_record(io.cucumber.datatable.DataTable expectedTitleOfFindPatientPage) {
         Map<String, String> validateTitle = expectedTitleOfFindPatientPage.asMap();
-        findPatientRecordPage.validationOfFindPatientRecordPage( driver, validateTitle.get("expectedTitleOfFindPatientPage"));
+        findPatientRecordPage.validationOfFindPatientRecordPage(driver, validateTitle.get("expectedTitleOfFindPatientPage"));
     }
+
     @When("user clicks on the Logo button to get to the home page")
     public void user_clicks_on_the_logo_button_to_get_to_the_home_page() {
         findPatientRecordPage.getToHomePage();
     }
+
     @Then("user validate again home page")
     public void user_validate_again_home_page(io.cucumber.datatable.DataTable expectedTitleHomePage) {
         Map<String, String> validateTitle = expectedTitleHomePage.asMap();
@@ -105,9 +104,10 @@ public class PatientRecord {
 
 
     @When("user clicks on the ActiveVisitsBtn")
-    public void user_clicks_on_the_active_visits_btn(){
+    public void user_clicks_on_the_active_visits_btn() {
         mainPage.activeVisitsClick();
     }
+
     @When("validate expectedTitleOfActiveVisits of ActiveVisitsBtn")
     public void validate_expected_title_of_active_visits_of_active_visits_btn(io.cucumber.datatable.DataTable expectedTitleOfActiveVisits) {
         Map<String, String> validateTitle = expectedTitleOfActiveVisits.asMap();
@@ -133,7 +133,7 @@ public class PatientRecord {
     }
 
     @When("validate expectedTitleOfRegisterPatient of RegisterPatientBtn")
-    public void validate_expected_title_of_register_patient_of_register_patient_btn(io.cucumber.datatable.DataTable expectedTitleOfRegisterPatient){
+    public void validate_expected_title_of_register_patient_of_register_patient_btn(io.cucumber.datatable.DataTable expectedTitleOfRegisterPatient) {
         Map<String, String> validateTitle = expectedTitleOfRegisterPatient.asMap();
         registerPatientPage.validationOfFindPatientRecordPage(driver, validateTitle.get("expectedTitleOfRegisterPatient"));
         registerPatientPage.getToHomePage();
@@ -157,7 +157,7 @@ public class PatientRecord {
     }
 
     @When("validate expectedTitleOfReports of ReportsBtn")
-    public void validate_expected_title_of_reports_of_reports_btn(io.cucumber.datatable.DataTable expectedTitleOfReports){
+    public void validate_expected_title_of_reports_of_reports_btn(io.cucumber.datatable.DataTable expectedTitleOfReports) {
         Map<String, String> validateTitle = expectedTitleOfReports.asMap();
         reportsPage.validationOfFindPatientRecordPage(driver, validateTitle.get("expectedTitleOfReports"));
         reportsPage.getToHomePage();
@@ -181,9 +181,9 @@ public class PatientRecord {
     }
 
     @When("validate expectedTitleOfConfigureMetadata of ConfigureMetadataBtn")
-    public void validate_expected_title_of_configure_metadata_of_configure_metadata_btn(io.cucumber.datatable.DataTable expectedTitleOfConfigureMetadata){
+    public void validate_expected_title_of_configure_metadata_of_configure_metadata_btn(io.cucumber.datatable.DataTable expectedTitleOfConfigureMetadata) {
         Map<String, String> validateTitle = expectedTitleOfConfigureMetadata.asMap();
-        configureMetadataPage.validationOfFindPatientRecordPage(driver,validateTitle.get("expectedTitleOfConfigureMetadata"));
+        configureMetadataPage.validationOfFindPatientRecordPage(driver, validateTitle.get("expectedTitleOfConfigureMetadata"));
         configureMetadataPage.getToHomePage();
     }
 
@@ -232,23 +232,23 @@ public class PatientRecord {
     }
 
 
-
-
     @Given("user is on the login page and provide login credentials")
     public void user_is_on_the_login_page_and_provide_login_credentials() throws InterruptedException {
-        loginPage.PositiveUserNameAndPassword("admin","Admin123");
+        loginPage.PositiveUserNameAndPassword("admin", "Admin123");
         loginPage.PositiveLocation();
         Thread.sleep(2000);
 
     }
+
     @When("user clicks register a  patient button")
     public void user_clicks_register_a_patient_button() throws InterruptedException {
         registerPatientPage.clikOnRegisterPatient();
-Thread.sleep(2000);
+        Thread.sleep(2000);
     }
+
     @Then("user enters all the valid information and click confirm")
     public void user_enters_all_the_valid_information_and_click_confirm() {
-registerPatientPage.fillInfoOnPatientPager();
+        registerPatientPage.fillInfoOnPatientPager();
     }
 
     @Then("user validates patient id")
@@ -259,63 +259,61 @@ registerPatientPage.fillInfoOnPatientPager();
 
 //Alena -active visits
 
-    @Given("the User is on the login page  he provides login credentials")
-    public void the_user_is_on_the_login_page_he_provides_login_credentials() {
-       loginPage.PositiveUserNameAndPassword("admin","Admin123");
-    }
-    @Then("user select the location and click login")
-    public void user_select_the_location_and_click_login() {
-       loginPage.PositiveLocation();
-    }
+
+
     @When("Find Patient button is displayed  the user clicks on Find patient")
-    public void find_patient_button_is_displayed_the_user_clicks_on_find_patient() {
-
+    public void find_patient_button_is_displayed_the_user_clicks_on_find_patient() throws InterruptedException {
+        activeVisitsPage.findPatient();
+        Thread.sleep(2000);
     }
+
     @Then("user search by id and clicks patient")
-    public void user_search_by_id_and_clicks_patient() {
-
+    public void user_search_by_id_and_clicks_patient() throws InterruptedException {
+        activeVisitsPage.setSearchByIdName("100J35");
+        Thread.sleep(2000);
     }
+
     @Then("Active patient requests  Start Visit and confirms")
-    public void active_patient_requests_start_visit_and_confirms() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void active_patient_requests_start_visit_and_confirms() throws InterruptedException {
+        activeVisitsPage.setStartVisit();
+        Thread.sleep(2000);
+
     }
-    @Then("the User adds  a  Note to visit")
-    public void the_user_adds_a_note_to_visit() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @Then("the User adds  a  Note to visit and requests cancel")
+    public void the_user_adds_a_note_to_visit_and_requests_cancel() throws InterruptedException {
+        activeVisitsPage.setVisitNote();
+        Thread.sleep(2000);
     }
+
     @Then("requests cancel  and goes to his profile Family Name")
-    public void requests_cancel_and_goes_to_his_profile_family_name() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void requests_cancel_and_goes_to_his_profile_family_name(String name) throws InterruptedException {
+        Thread.sleep(2000);
+        activeVisitsPage.setOpenMrsMainPage();
+        Thread.sleep(2000);
     }
-    @Then("Active patient ends the visit  and confirms with Yes")
-    public void active_patient_ends_the_visit_and_confirms_with_yes() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @Then("User cancels the visit and confirms with yes")
+    public void user_cancels_the_visit_and_confirms_with_yes() throws InterruptedException {
+        activeVisitsPage.setEndVisit();
+        Thread.sleep(2000);
     }
+
     @When("the User navigates back to the main page")
-    public void the_user_navigates_back_to_the_main_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void the_user_navigates_back_to_the_main_page() throws InterruptedException {
+        activeVisitsPage.setOpenMrsMainPage();
+        Thread.sleep(2000);
     }
+
     @When("User enters  Active Visit")
-    public void user_enters_active_visit() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_enters_active_visit() throws InterruptedException {
+        mainPage.activeVisitsClick();
+        Thread.sleep(2000);
     }
+
     @Then("patient should be able to check that  he is no longer in active visits")
-    public void patient_should_be_able_to_check_that_he_is_no_longer_in_active_visits() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void patient_should_be_able_to_check_that_he_is_no_longer_in_active_visits() throws InterruptedException {
+        activeVisitsPage.validateEmptyActivePatientList(driver);
+        Thread.sleep(2000);
     }
-
-
-
-
-
-
-
-
 }

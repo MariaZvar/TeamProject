@@ -1,4 +1,4 @@
-package com.openMRS.step_defenitions;
+package com.openMRS.step_definitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
