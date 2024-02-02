@@ -25,6 +25,8 @@ public class PatientRecord {
     SystemAdministrationPage systemAdministrationPage = new SystemAdministrationPage(driver);
     private RegisterPatientPage registrationPage;
 
+    AdvancedManagement advancedManagement = new AdvancedManagement(driver);
+
     @When("user provide userName and password")
     public void user_provide_user_name_and_password(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
 
@@ -257,9 +259,7 @@ public class PatientRecord {
     }
 
 
-
 //Alena -active visits
-
 
 
     @When("Find Patient button is displayed  the user clicks on Find patient")
@@ -319,4 +319,50 @@ public class PatientRecord {
         Thread.sleep(2000);
     }
 
+
+
+
+    @Given("User is on home page and clicks System Administration and  Advanced Administration buttons")
+    public void user_is_on_home_page_and_clicks_system_administration_and_advanced_administration_buttons() {
+        advancedManagement.clickAdministrations();
+    }
+    @Then("User clicks Manage Person")
+    public void user_clicks_manage_person() {
+        advancedManagement.clickOnManagePerson();
+    }
+    @Then("User enters {string} into Person Name Field and clicks include deleted button")
+    public void user_enters_into_person_name_field_and_clicks_include_deleted_button(String name) throws InterruptedException {
+        advancedManagement.enterPersonInfo(name);
+  advancedManagement.clickOnPersonInfoField(name);
+    }
+    @Then("user clicks on person information line")
+    public void user_clicks_on_person_information_line() {
+        advancedManagement.clickVeraName();
+    }
+    @Then("User deletes address in line Address and enter updated {string} and saves it")
+    public void user_deletes_address_in_line_address_and_enter_updated_and_saves_it(String newAddress) throws InterruptedException {
+        advancedManagement.changeUserInfo(newAddress);
+    }
+    @Then("User comes back on main page")
+    public void user_comes_back_on_main_page() {
+        advancedManagement.backToMainPage();
+    }
+    @Then("User is on home page and clicks button Find Person Record")
+    public void user_is_on_home_page_and_clicks_button_find_person_record() {
+        advancedManagement.findPatientRecord();
+    }
+    @Then("enters patient {string} and click Enter")
+    public void enters_patient_and_click_enter(String name) {
+        advancedManagement.findPatientName(name);
+    advancedManagement.clickONameWithUpdates();
+    }
+    @Then("User clicks Show Contact Info and validates information about address")
+    public void user_clicks_show_contact_info_and_validates_information_about_address() throws InterruptedException {
+        advancedManagement.validateUpdates();
+    }
+
+
+
 }
+
+

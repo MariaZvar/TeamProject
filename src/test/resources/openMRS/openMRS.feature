@@ -130,4 +130,19 @@ Feature:WebPages Functionality
 
 
 
+  Scenario Outline: Advanced Management
+    Given User is on home page and clicks System Administration and  Advanced Administration buttons
+    Then User clicks Manage Person
+    And User enters '<name>' into Person Name Field and clicks include deleted button
+    Then user clicks on person information line
+    And User deletes address in line Address and enter updated '<newAddress>' and saves it
+    Then User comes back on main page
+    And User is on home page and clicks button Find Person Record
+    Then enters patient '<findPersonName>' and click Enter
+    And User clicks Show Contact Info and validates information about address
+
+    Examples:
+      | name      | newAddress   | findPersonName |
+      | vera vera | 171 N Bay Rd | vera vera      |
+
 

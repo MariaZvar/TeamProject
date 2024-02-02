@@ -206,4 +206,22 @@ public class BrowserUtils {
 
         }
     }
+
+
+    public static void  clickOnElement (WebElement element){
+        element.click();
+    }
+    public static  String  getTitleWithJs(WebDriver driver){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return  js.executeScript("return document.title").toString();
+    }
+
+    public static  void clickWithJs(WebDriver driver,WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click()",element);
+    }
+    public static void scrollWithJs(WebDriver driver,WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true)", element);
+    }
 }
