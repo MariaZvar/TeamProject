@@ -110,7 +110,7 @@ Feature:WebPages Functionality
 
 
 
-
+  @Task6   #Vera
   Scenario Outline: Advanced Management
     Given User is on home page and clicks System Administration and  Advanced Administration buttons
     Then User clicks Manage Person
