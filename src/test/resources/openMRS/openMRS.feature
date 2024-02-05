@@ -90,25 +90,6 @@ Feature:WebPages Functionality
       | expectedTitleHomePage | Home |
 
 
-  @Task3
-  Scenario: advanced Management
-
-    Then user goes to the System Administrations and clicks Advanced Administrations
-
-    And user clicks manage-person and finds the deleted person by name
-      | name | baaber |
-
-    Then user changes the address and saves person
-      | address | 1712 Mailuusuu |
-
-    And user comes back and clicks Find Person Record
-
-    Then user finds updated person by nameWithUpdated
-      | nameWithUpdated | baaber |
-
-    And user checks the updatedInfo
-      | updatedInfo | 1712 Mailuusuu, Des Plaines |
-
 
 
   @Task5   #Alena
@@ -123,10 +104,26 @@ Feature:WebPages Functionality
     And  User enters  Active Visit
     Then patient should be able to check that  he is no longer in active visits
 
+# alena 12.30 to Remote Alena
 
 
 
 
 
+  @Task6   #Vera
+  Scenario Outline: Advanced Management
+    Given User is on home page and clicks System Administration and  Advanced Administration buttons
+    Then User clicks Manage Person
+    And User enters '<name>' into Person Name Field and clicks include deleted button
+    Then user clicks on person information line
+    And User deletes address in line Address and enter updated '<newAddress>' and saves it
+    Then User comes back on main page
+    And User is on home page and clicks button Find Person Record
+    Then enters patient '<findPersonName>' and click Enter
+    And User clicks Show Contact Info and validates information about address
+
+    Examples:
+      | name      | newAddress   | findPersonName |
+      | vera vera | 171 N Bay Rd | vera vera      |
 
 
