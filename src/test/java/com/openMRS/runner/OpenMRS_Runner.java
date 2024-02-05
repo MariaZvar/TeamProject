@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/openMRS/openMRS.feature",
         glue = "com/openMRS/step_definitions",
-        dryRun =false,
+        dryRun =true,
         //tags ="@Task5",
         plugin = {"pretty", "html:target/uiReport.html", "rerun:target/uiFailedTests.txt"}
 
@@ -17,3 +17,4 @@ import org.junit.runner.RunWith;
 )
 public class OpenMRS_Runner {
 }
+  // this is Amits

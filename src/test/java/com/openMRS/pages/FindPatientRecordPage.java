@@ -47,9 +47,14 @@ List<WebElement> infoBody;
     WebElement reasonForDelete;
     @FindBy(xpath = "//button[contains(text(),'Confirm')]")
     List<WebElement> confirmDelete;
-    @FindBy(xpath = "//li[@class='nav-item logout']")
+    @FindBy(xpath = "//a[contains(text(),'Logout')]")
     WebElement logout;
 
+
+    public void validateSearchClearBtn(){
+        Assert.assertTrue(searchBar.isDisplayed());
+        Assert.assertTrue(clearButton.isDisplayed());
+    }
 
 public void validateHeaders(){
     for(WebElement header: headers){
@@ -98,9 +103,7 @@ public void clickOnFirstResult(){
 }
 
 
-    public void validateSearch(){
-        org.testng.Assert.assertTrue(searchBar.isDisplayed(),"search bar is displayed");
-    }
+
     public void validateClearBtn(String Search) throws InterruptedException {
         org.testng.Assert.assertTrue(clearButton.isDisplayed(),"clear button is displayed");
         searchBar.sendKeys(Search);
@@ -113,12 +116,11 @@ public void clickOnFirstResult(){
         searchBar.sendKeys(idOrName );
     }
     public void validatePatient(String idOrName){
-        if(resultBtn.getText() != ""){
+        if((resultBtn.getText() != "")){
      Assert.assertTrue(resultBtn.getText().contains(idOrName));
         System.out.println("patient is registered with id: "+id.get(0).getText().substring(0,6)+" and name:"+name.get(0).getText());}
         else if (resultBtn.getText().contains( "No matching records found") ){
             Assert.assertTrue(resultBtn.getText().equalsIgnoreCase("No matching records found"));
-
             System.out.println("patient is unregistered");
         }
 

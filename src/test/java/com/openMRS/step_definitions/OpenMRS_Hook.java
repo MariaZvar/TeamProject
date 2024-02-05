@@ -17,5 +17,6 @@ public class OpenMRS_Hook {
     @After
     public void teamDown(Scenario scenario){
         BrowserUtils.takeScreenshotCucumber(scenario,driver);
+       // driver.close();
     }
 }

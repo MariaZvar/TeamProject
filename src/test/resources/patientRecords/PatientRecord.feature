@@ -16,4 +16,4 @@ Scenario: Successfully register a new patient
 
 Examples:
   |givenName|familyName|day |month|years|address|country|state|city|zipcode|phone|
-  |  arun   |   kumar  | 24 | March |  1990 | abcd|  india | Haryana  |Kurukshetra|136118|9288825345   |
+  |  amit   |   kumar  | 24 | March |  1990 | abcd|  india | Haryana  |Kurukshetra|136118|9288825345   |
